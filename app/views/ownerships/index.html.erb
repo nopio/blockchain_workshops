@@ -1,0 +1,21 @@
+<div class='panel'>
+  <h2 class="mb-4">Ownership requests:</h2>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Picture</th>
+        <th>Receiver email</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ownership_proofs.each do |ownership_proof| %>
+        <tr>
+          <td><%= image_tag ownership_proof.picture.attachment.url(:mini) %></td>
+          <td><%= ownership_proof.receiver_email %></td>
+          <td><%= ownership_proof.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

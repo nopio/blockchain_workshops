@@ -1,0 +1,25 @@
+<div class='panel'>
+  <h2 class="mb-4">Registred pictures:</h2>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Picture</th>
+        <th>Hash</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% pictures.each do |picture| %>
+        <tr>
+          <td><%= image_tag picture.attachment.url(:mini) %></td>
+          <td><%= picture.fingerprint %></td>
+          <td><%= link_to 'Show', user_picture_path(id: picture.id), { class: 'btn btn-info' } %></td>
+          <td><%= link_to 'Add owner', user_picture_add_owner_path(picture_id: picture.id), { class: 'btn btn-primary' } %></td>
+          <td><%= link_to 'Send ownership request', new_ownership_path(picture_id: picture.id), { class: 'btn btn-primary' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

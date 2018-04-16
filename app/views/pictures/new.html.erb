@@ -1,0 +1,15 @@
+<div class='panel'>
+  <h2 class="mb-4">Register picture</h2>
+  <%= simple_form_for :picture, url: :user_pictures do |f| %>
+    <div class='form-group'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <%= f.file_field :file %>
+        </div>
+      </div>
+    </div>
+    <div class='form-actions'>
+      <%= f.submit 'Add', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  </div>

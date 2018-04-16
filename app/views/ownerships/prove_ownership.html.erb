@@ -1,0 +1,32 @@
+<div class='panel'>
+  <h2 class="mb-4">Prove ownership</h2>
+  <p> Please insert private key of your blockchain address.</br>
+      We will create signed token with your key. </br>
+    You could insert your private key and send created signature </br>
+    All operation will be done on your browser side. Your private key won't be send</br>
+    You could also sign token: <%= params[:token] %> by yourself and send your signature
+  </p>
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-md-12'>
+        <div class='form-group'>
+          <label class="control-label">Private key</label>
+          <input type='text' id='private_key' class='form-control required'></input>
+        </div>
+      </div>
+    </div>
+    <div class='form-actions'>
+      <button type='button' id='sign' class='btn btn-primary'>Create signature</button>
+    </div>
+    <%= simple_form_for :ownership_proof, url: send_prove_ownerships_path(token: params[:token]) do |f| %>
+      <div class='row'>
+        <div class='col-md-12'>
+          <%= f.input :signature, id: 'signature' %>
+        </div>
+      </div>
+      <div class='form-actions'>
+        <%= f.submit 'Send', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

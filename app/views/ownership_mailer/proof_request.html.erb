@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi!</h1>
+    <p>
+      On your website your're using this image
+      <%= image_tag attachments['picture.jpg'].url %>
+    </p>
+    <p>
+      To prove your ownership of picture, just follow this link and insert your blockchain private key:
+      <%= link_to 'prove ownership link', prove_ownership_ownerships_url(token: @token) %>
+    </p>
+    <p>Thanks have a great day!</p>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "blockchain_workshops",
+  "private": true,
+  "dependencies": {
+    "browserify": "^16.1.1",
+    "browserify-incremental": "^3.1.0",
+    "eth-crypto": "^0.4.0"
+  }
+}

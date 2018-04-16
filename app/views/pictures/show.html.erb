@@ -1,0 +1,42 @@
+<div class='panel'>
+  <div class='container'>
+    <h2 class="mb-4">Picture:</h2>
+    <table class='table table-striped'>
+      <tbody>
+        <tr>
+          <td>
+            Hash:
+          </td>
+          <td>
+            <%= picture.fingerprint %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Author:
+          </td>
+          <td>
+            <%= picture.author.email%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Owners:
+          </td>
+          <td>
+            <% @owners.each do |owner| %>
+              <div class='row'>
+                <div class='col'>
+                  <%= owner %>
+                </div>
+              </div>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <%= image_tag picture.attachment.url(:normal) %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class='panel'>
+  <h2 class="mb-4">Send request</h2>
+  <%= simple_form_for :ownership_proof, url: :ownerships do |f| %>
+    <%= f.input :picture_id, as: :hidden, input_html: { value: params[:picture_id] } %>
+    <div class='form-group'>
+      <div class='col-md-12'>
+        <%= f.input :receiver_email, type: :email %>
+      </div>
+    </div>
+    <div class='form-actions'>
+      <%= f.submit 'Send', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

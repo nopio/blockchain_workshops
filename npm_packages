@@ -1,0 +1,7 @@
+# Browserify is required.
+# You can install it globally and delete from here.
+npm 'browserify', require: false, development: true
+
+# Add some npm packages
+
+npm 'eth-crypto', '~>0.4.0'
