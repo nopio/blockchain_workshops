@@ -1,6 +1,6 @@
 # Blockchain Workshops
 
-## Prerequiste
+## Prerequisite
 
 * Install parity: https://www.parity.io/
   For mac:
