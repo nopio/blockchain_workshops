@@ -12,5 +12,7 @@ class Blockchain::AddOwnerService
   private
 
   def add_owner
+    signed_contract = Contract::GetSignedService.new.call(@key)
+    signed_contract.transact.add_owner(@fingerprint, @owner)
   end
 end

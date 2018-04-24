@@ -5,7 +5,7 @@ class PicturesController < BaseController
   def create
     created_picture = Picture::SaveService.new(picture_params.merge(user_id: params[:user_id])).call
     if created_picture.id.present?
-      # Blockchain::RegisterPictureService.new(created_picture.fingerprint, current_user.private_key).call
+      Blockchain::RegisterPictureService.new(created_picture.fingerprint, current_user.private_key).call
       flash[:notice] = 'Picture registered'
       redirect_to :user_pictures
     else
@@ -20,7 +20,7 @@ class PicturesController < BaseController
 
   def transfer
     if Picture::AddOwnerService.new(picture, picture_params[:owner]).call
-      # Blockchain::AddOwnerService.new(picture, picture_params[:owner], current_user.private_key).call
+      Blockchain::AddOwnerService.new(picture, picture_params[:owner], current_user.private_key).call
       flash[:notice] = 'Owner added'
       redirect_to :user_pictures
     else

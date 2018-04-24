@@ -11,5 +11,16 @@ class Contract::SignService
   private
 
   def sign
+    key = Eth::Key.new(priv: @private_key)
+    @contract.key = key
+    @contract
   end
 end
+
+
+
+
+
+
+
+

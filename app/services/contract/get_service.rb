@@ -10,5 +10,6 @@ class Contract::GetService
   private
 
   def get_contract
+    Ethereum::Contract.create(file: "#{Dir.pwd}/app/contracts/PicturesContract.sol", address: @address)
   end
 end

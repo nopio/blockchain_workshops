@@ -10,5 +10,7 @@ class Blockchain::GetOwnersService
   private
 
   def get_owners
+    contract = Contract::GetService.new(Contract.last.address).call
+    contract.call.get_owners(@fingerprint)
   end
 end

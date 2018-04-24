@@ -11,5 +11,7 @@ class Blockchain::RegisterPictureService
   private
 
   def register_picture
+    signed_contract = Contract::GetSignedService.new.call(@key)
+    signed_contract.transact.register_picture(@fingerprint)
   end
 end
